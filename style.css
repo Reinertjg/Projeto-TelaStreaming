@@ -1,0 +1,361 @@
+@-webkit-keyframes puff-in-center {
+    0% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes puff-in-center {
+    0% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+/* ---------------------------------------------- */
+
+
+:root {
+    --branco-principal: #FFFFFF;
+    --cinza-secundario: #C0C0C0;
+    --botao-azul: #B11A1A;
+    --botao-azul-claro: #4896f5;
+    --cor-de-fundo: #00030C;
+    --fonte-principal: 'Inter';
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco-principal);
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.principal {
+    background-image: url("img/Background.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.container__botao {
+    background-color: var(--botao-azul);
+    border-radius: 5px;
+    padding: 0.9em;
+    color: var(--branco-principal);
+    border: 2px solid var(--botao-azul);
+    display: block;
+    text-decoration: none;
+    margin-bottom: 1em;
+    transition: 0.5s;
+}
+
+.container__botao:hover {
+    border: 2px solid var(--branco-principal);
+
+}
+
+.botao_secundario {
+    background-color: transparent;
+    border: 2px solid var(--branco-principal);
+    transition: 0.5s;
+}
+
+.botao_secundario:hover {
+    background-color: var(--branco-principal);
+    color: var(--botao-azul);
+    font-weight: bold;
+}
+
+.container__aviso {
+    font-size: 12px;
+    color: var(--cinza-secundario);
+}
+
+.container__imagem {
+    margin: 2em 0 2em 0;
+}
+
+.container__caixa {
+    margin: 0 9em;
+}
+
+/* Segunda Section */
+
+.secundario {
+    align-items: center;
+    margin: 0 6em;
+}
+
+.filme__imagem {
+    width: 203.02px;
+    height: 306.15px;
+    visibility: hidden;
+    border-radius: 1.5em;
+    transition: 0.5s;
+    position: relative;
+    /* Garantir que a imagem tenha um posicionamento para manipular z-index */
+    z-index: 1;
+    /* Definir z-index básico */
+}
+
+.filme__imagem.visivel {
+    opacity: 1;
+    transform: translateY(0);
+    animation: puff-in-center 1s;
+    visibility: visible;
+}
+
+.filme__imagem:hover {
+    transform: scale(1.35);
+    z-index: 10;
+    /* Quando o mouse passa, a imagem vai "subir" sobre as outras */
+    position: relative;
+    /* Garantir que o z-index funcione */
+}
+
+.lista_segundario {
+    display: grid;
+    /* Define o container como flexível */
+    justify-content: space-evenly;
+    /* Afastar uniformemente entre os itens */
+    list-style-type: none;
+    /* Remove os marcadores das listas */
+    padding: 0;
+    /* Remove o padding padrão */
+    margin: 0;
+    /* Remove a margem padrão */
+    gap: 1em;
+}
+
+.lista_segundario li {
+    display: flex;
+    /* Torna os <li> flexíveis */
+    gap: 1em;
+    /* Define o espaçamento entre as imagens */
+}
+
+.descricao__titulo {
+    font-weight: 700;
+    font-size: 48px;
+    color: var(--branco-principal);
+    margin-bottom: 0.1em;
+}
+
+.descricao__texto {
+    color: var(--cinza-secundario);
+}
+
+/* Terceiro Section */
+
+.secundario__botao {
+    display: inline-block;
+    margin-top: 1em;
+    border: 2px solid var(--botao-azul);
+    transition: 0.5s;
+}
+
+.secundario__botao:hover {
+    background-color: transparent;
+}
+
+.container__descricao {
+    padding: 2em;
+}
+
+.serie__imagem {
+    width: 203.02px;
+    height: 306.15px;
+    visibility: hidden;
+    border-radius: 1.5em;
+    transition: 0.5s;
+    position: relative;
+    /* Garantir que a imagem tenha um posicionamento para manipular z-index */
+    z-index: 1;
+    /* Definir z-index básico */
+}
+
+.serie__imagem.visivel {
+    opacity: 1;
+    transform: translateY(0);
+    animation: puff-in-center 1s;
+    visibility: visible;
+}
+
+.serie__imagem:hover {
+    transform: scale(1.35);
+    z-index: 10;
+    /* Quando o mouse passa, a imagem vai "subir" sobre as outras */
+    position: relative;
+    /* Garantir que o z-index funcione */
+}
+
+
+/* Quarta Section */
+
+.stream__imagem {
+    height: 184.56px;
+    width: 278.32px;
+    visibility: hidden;
+    border-radius: 1.5em;
+    transition: 0.5s;
+    position: relative;
+    /* Garantir que a imagem tenha um posicionamento para manipular z-index */
+    z-index: 1;
+    /* Definir z-index básico */
+}
+
+.stream__imagem.visivel {
+    opacity: 1;
+    transform: translateY(0);
+    animation: puff-in-center 1s;
+    visibility: visible;
+}
+
+.stream__imagem:hover {
+    transform: scale(1.35);
+    z-index: 10;
+    /* Quando o mouse passa, a imagem vai "subir" sobre as outras */
+    position: relative;
+    /* Garantir que o z-index funcione */
+}
+
+
+/* Quinta Section */
+
+.dispositivos__lista {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 5em 0;
+}
+
+.dispositivos {
+    text-align: center;
+}
+
+.dispositivos__titulo {
+    font-size: 48px;
+    color: var(--branco-principal);
+}
+
+.lista__item {
+    font-size: 32px;
+    color: var(--branco-principal);
+}
+
+/* Sexta Section */
+
+.rodape {
+    text-align: center;
+    margin: 15em 20em 5em 15em;
+
+}
+
+.rodape__lista {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 2em;
+    margin: 2em 0;
+}
+
+.lista__link a {
+    font-size: 16px;
+    text-decoration: none;
+    font-family: var(--fonte-principal);
+    color: var(--branco-principal);
+}
+
+.lista__link a:hover {
+    color: var(--botao-azul);
+}
+
+.rodape_texto {
+    align-items: center;
+    margin-bottom: 2em;
+    font-size: 14px;
+    color: var(--cinza-secundario);
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .container__caixa {
+        margin: 0 4em;
+    }
+    
+    .secundario {
+        margin: 0 3em;
+    }
+
+    .rodape {
+        margin: 5em 10em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container__caixa {
+        margin: 0 2em;
+    }
+
+    .secundario {
+        margin: 0 1em;
+    }
+
+    .dispositivos__lista {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rodape {
+        margin: 2em;
+    }
+
+    .rodape__lista {
+        flex-direction: column;
+        gap: 1em;
+    }
+}
