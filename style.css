@@ -428,6 +428,7 @@ body {
     .filme__imagem {
         width: 108px;
         height: 166px;
+        position: relative;
     }
 
     .lista_segundario {
